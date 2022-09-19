@@ -1,16 +1,16 @@
 from typing import List
      
 def selectionSort(array, size) -> List[int]:
-  for i in range(0,size-1):
-    min = i
-    for j in range(i+1,size):
-      if array[j]<array[min]:
-        min = j
-        temp = array[min]
-        array[i] = array[min]
-        array[min] = temp
-        
-        return array
+  """
+  Function implementing selection sort algorithm to return the passed array sorted in the ascending order
+  """
+  for index in range(size):
+    min_index = index
+    for ind in range(index + 1, size):
+      if array[ind] < array[min_index]:
+        min_index = ind
+    array[min_index], array[index] = array[index], array[min_index]
+  return array
     
   
 # Do not change the following code
